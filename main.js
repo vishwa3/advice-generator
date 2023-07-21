@@ -9,7 +9,9 @@ button.addEventListener("click", async (event) => {
   button.style.setProperty("pointer-events", "none");
   adviceMessage.style.setProperty("filter", "blur(5px)");
   adviceId.style.setProperty("filter", "blur(5px)");
-  const response = await fetch("https://api.adviceslip.com/advice");
+  const response = await fetch("https://api.adviceslip.com/advice", {
+    cache: "no-cache",
+  });
   const {
     slip: { advice, id },
   } = await response.json();
